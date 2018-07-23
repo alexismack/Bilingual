@@ -22,13 +22,13 @@ class Search(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('search.html')
         self.response.write(template.render())
-class Results(webapp2.RequestHandler):
-    def get(self):
+
+    def post(self):
         template = jinja_environment.get_template('results.html')
         self.response.write(template.render())
+
 app = webapp2.WSGIApplication([
     ('/', Home),
     # ('/Profile', Profile),
     ('/search', Search),
-    ('/results', Results),
-], debug=True)
+)], debug=True)
