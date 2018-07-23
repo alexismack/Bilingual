@@ -6,4 +6,5 @@ class User(ndb.Model):
     Availability = ndb.StringProperty(required=True)
     Time Span = ndb.StringProperty(required=True)
 
+
 print(User.Availability)
