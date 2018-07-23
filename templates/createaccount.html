@@ -6,16 +6,19 @@
   </head>
   <body>
     <form action="index.html" method="post"> <!-- Change action -->
-      <input name="City" placeholder="City">
-      <input name="Country" placeholder="Country"><br>
+      <p>Your home location:</p>
+      <input name="city" placeholder="City">
+      <input name="country" placeholder="Country"><br>
 
-      <input type="radio" name="Availability" value="high">High<br>
-      <input type="radio" name="Availability" value="medium">Medium<br>
-      <input type="radio" name="Availability" value="low">Low<br>
+      <p>Availability of time to spend with friend:</p>
+      <input type="radio" name="availability" value="high">High<br>
+      <input type="radio" name="availability" value="medium">Medium<br>
+      <input type="radio" name="availability" value="low">Low<br>
 
-      <input type="checkbox" name="Timespan" value="short">Short Term<br>
-      <input type="checkbox" name="Timespan" value="mid">Mid Term<br>
-      <input type="checkbox" name="Timespan" value="long">Long Term<br>
+      <p>How long would you like to welcome someone?</p>
+      <input type="checkbox" name="timespan" value="short">Short Term (less than two weeks)<br>
+      <input type="checkbox" name="timespan" value="mid">Mid Term (less than three months)<br>
+      <input type="checkbox" name="timespan" value="long">Long Term (staying for a while)<br>
 
       <button name="button">Create Account</button>
     </form>
