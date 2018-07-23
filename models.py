@@ -1,4 +1,13 @@
+import logging
+import os
+import jinja2
+import webapp2
+import json
+import urllib2
+from google.appengine.api import urlfetch
+from google.appengine.api import users
 from google.appengine.ext import ndb
+
 
 class User(ndb.Model):
     city = ndb.StringProperty(required=True)
