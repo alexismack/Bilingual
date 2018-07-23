@@ -3,12 +3,12 @@ api_version: 1
 threadsafe: true
 
 handlers:
-- url: /.*
-  script: main.app
 - url: /stylesheets
   static_dir: stylesheets
 - url: /js
   static_dir: js
+- url: /.*
+  script: main.app
 
 libraries:
 - name: jinja2
