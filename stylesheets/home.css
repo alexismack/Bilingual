@@ -1,0 +1,45 @@
+.body {
+  background-color: #d38154;
+}
+
+.img {
+  display: flex;
+  margin: 20px, 20px, 20px, 20px;
+  justify-content: center;
+}
+.img img {
+  height: 150%;
+  width: 150%;
+}
+
+.topline {
+  display: grid;
+  grid-template-columns: 25% 50% 25%;
+}
+
+h1 {
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+a, button {
+  font-size: 20px;
+  color: black;
+  background-color: white;
+  border-radius: 15px;
+  /* margin: 5px; */
+  text-decoration: none;
+  padding: 5px;
+  border: 2px solid black;
+}
+
+.translate {
+  display: flex;
+  align-items: center;
+}
