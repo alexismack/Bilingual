@@ -5,9 +5,19 @@
     <title>Create Account</title>
   </head>
   <body>
-    <form action="index.html" method="post">
-      <input name="City">
-      <input name="Country" value="">
+    <form action="index.html" method="post"> <!-- Change action -->
+      <input name="City" placeholder="City">
+      <input name="Country" placeholder="Country"><br>
+
+      <input type="radio" name="Availability" value="high">High<br>
+      <input type="radio" name="Availability" value="medium">Medium<br>
+      <input type="radio" name="Availability" value="low">Low<br>
+
+      <input type="checkbox" name="Timespan" value="short">Short Term<br>
+      <input type="checkbox" name="Timespan" value="mid">Mid Term<br>
+      <input type="checkbox" name="Timespan" value="long">Long Term<br>
+
+      <button name="button">Create Account</button>
     </form>
   </body>
 </html>
