@@ -65,6 +65,18 @@ class Profiles(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('profiles.html')
         self.response.write(template.render())
+        current = users.get_current_user()
+        if current:
+            key = ndb.Key('User', current.email())
+            individual = key.get()
+            variables = {'name': individual.name,
+                        'email': individual.email,
+                        'city': individual.city,
+                        'country': individual.country,
+                        'time_span': individual.time_span,
+                        'availability': individual.availability,
+                        }
+            self.response.write(template.render(variables))
 
 class CreateAccount(webapp2.RequestHandler):
     def get(self):
@@ -83,13 +95,13 @@ class CreateAccount(webapp2.RequestHandler):
         key = ndb.Key("User", email)
         exists = key.get()
         variables = {'email': email + ' already extists',}
-        template2 = jinja_environment.get_template('profiles.html')
         if exists:
-            self.response.write(template2.render(variables))
+            self.response.write(template.render(variables))
         else:
             user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
             user.put()
             self.redirect('/search')
+
 
 
 app = webapp2.WSGIApplication([
