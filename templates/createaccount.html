@@ -5,8 +5,11 @@
     <title>Create Account</title>
   </head>
   <body>
-    <form action="index.html" method="post"> <!-- Change action -->
-      <input type="text" name="" value="">
+    <form action="/" method="get"> <!-- Change action -->
+
+      <input name="name" placeholder="name">
+      <input name="email" placeholder="email@example.com">
+
       <p>Your home location:</p>
       <input name="city" placeholder="City">
       <input name="country" placeholder="Country"><br>
@@ -23,5 +26,6 @@
 
       <button name="button">Create Account</button>
     </form>
+    <p>{{email}}</p>
   </body>
 </html>

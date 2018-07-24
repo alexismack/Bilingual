@@ -55,6 +55,21 @@ class CreateAccount(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('createaccount.html')
         self.response.write(template.render())
+        # template = jinja_environment.get_template('createaccount.html')
+        name = self.request.get("name")
+        email = self.request.get("email")
+        city = self.request.get("city")
+        country = self.request.get("country")
+        availability = self.request.get("availability")
+        timespan = self.request.get("timespan")
+        key = ndb.Key("User", email)
+        exists = key.get()
+        variables = {'email': email + 'already extists'}
+        if exists:
+            self.response.write(template.render(variables))
+        else:
+            user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, timespan=timespan)
+            user.put()
 
 app = webapp2.WSGIApplication([
     ('/', Home),
