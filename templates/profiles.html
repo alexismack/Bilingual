@@ -3,14 +3,97 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" href="../stylesheets/profiles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet">>
+
   </head>
   <font color = "white">
-  <body background = "https://images.unsplash.com/photo-1502866088342-cc132593eea7?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=49c7c249b18c19c8e424f53d082ecc27&auto=format&fit=crop&w=1950&q=80">
-  <center> <h1 class = header> {{email}} {{city}} </h1> </center>
+  <body background = "https://images.unsplash.com/photo-1532433308301-ddfff1c56afc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a802848fff0d070bcf3f629e7a4b2149&auto=format&fit=crop&w=1650&q=80">
+  <center> <h1 class = header>  </h1> </center>
+  <center>
+    <nav >
+      <i class="material-icons"> accessibility_new </i>
+      <a href="{{log_url}}">{{log_message}}</a>
+      <a href="/createaccount">Sign Up</a>
+      <a href="/"> Search </a>
+    </nav>
+     <div class =top>
+       <h1> <i class="material-icons">face</i> {{name}} </h1>
 
-    <center> <div class =top>
-    {{time_span}} </div> </center>
-    <div class =bottom> Bottom HAS Images </div>
+      <fieldset>
+          <legend>Profile</legend>
+
+          <div>
+              <label for="avatar">Profile picture:</label>
+              <input type="file"
+                     id="avatar" name="avatar"
+                     accept="image/png, image/jpeg" />
+          </div>
+
+      </fieldset>
+
+      <h2>
+       <div class = criticalinfo>
+
+          {{city}}
+          {{country}}
+      </div>
+      <div class = criticalinfo>
+          {{time_span}}
+          {{availability}}
+      </div>
+         <div class = message>
+        <font color = "black">
+
+        <div class = msg >
+           SEND MESSAGE
+           <i class="material-icons">message</i>
+         </font>
+       </div>
+     </div>
+    </h2>
+    </div>
+  </center>
+
+
+    <div class=bottom color = black>
+      <fieldset>
+          <legend>Your Story <i class="material-icons">language</i></legend>
+
+          <div>
+              <label for="avatar">Share Your Journey: </label>
+              <input type="file"
+                     id="jounrey1" name="journey1"
+                     accept="image/png, image/jpeg" />
+          </div>
+          <div>
+              <label for="avatar">Share Your Journey:</label>
+              <input type="file"
+                     id="jounrey2" name="journey2"
+                     accept="image/png, image/jpeg" />
+          </div>
+
+          <div>
+              <label for="avatar">Share Your Journey:</label>
+              <input type="file"
+                     id="jounrey3" name="journey3"
+                     accept="image/png, image/jpeg" />
+          </div>
+          <div>
+              <label for="avatar">Share Your Journey:</label>
+              <input type="file"
+                     id="jounrey4" name="journey4"
+                     accept="image/png, image/jpeg" />
+          </div>
+          <div>
+              <label for="avatar">Share Your Journey:</label>
+              <input type="file"
+                     id="jounrey4" name="journey4"
+                     accept="image/png, image/jpeg" />
+          </div>
+
+      </fieldset>
+    </div>
 
 
 
