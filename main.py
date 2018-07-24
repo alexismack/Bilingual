@@ -64,7 +64,7 @@ class Home(webapp2.RequestHandler):
 class Profiles(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('profiles.html')
-        self.response.write(template.render())
+        # self.response.write(template.render())
         current = users.get_current_user()
         if current:
             key = ndb.Key('User', current.email())
