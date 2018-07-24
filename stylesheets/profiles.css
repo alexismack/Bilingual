@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 .top {
     position: top;
@@ -19,4 +20,10 @@
     margin-right: 225px;
     border-style: solid;
     border-width: 5px;
+=======
+body {
+  display: grid;
+  grid-template-columns: 10% 40% 40% 10%;
+  grid-template-rows: 10% 40% 40% 10%;
+>>>>>>> 57bb830a38e6044012cf235ce7e781abdc9a2ab8
 }

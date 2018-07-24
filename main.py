@@ -13,29 +13,43 @@ jinja_environment = jinja2.Environment(
 class Home(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('home.html')
-        self.response.write(template.render())
-
-
-class Authorize(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('authorize.html')
-        self.response.write(template.render())
         individual = users.get_current_user()
-
         if individual:
             #user is logged in
             log_url = users.create_logout_url('/')
-            log_message = 'Sign Out'
+            log_message = 'Log Out'
         if not individual:
             #user is not logged in
             log_url = users.create_login_url('/')
-            log_message = 'Sign In'
+            log_message = 'Log In'
         variables = {
             'individual': individual,
             'log_url': log_url,
             'log_message': log_message,
         }
         self.response.out.write(template.render(variables))
+
+
+# class Authorize(webapp2.RequestHandler):
+#     def get(self):
+#         template = jinja_environment.get_template('authorize.html')
+#         # self.response.write(template.render())
+#         individual = users.get_current_user()
+#
+#         if individual:
+#             #user is logged in
+#             log_url = users.create_logout_url('/')
+#             log_message = 'Log Out'
+#         if not individual:
+#             #user is not logged in
+#             log_url = users.create_login_url('/')
+#             log_message = 'Log In'
+#         variables = {
+#             'individual': individual,
+#             'log_url': log_url,
+#             'log_message': log_message,
+#         }
+#         self.response.out.write(template.render(variables))
 
 
 class Search(webapp2.RequestHandler):
@@ -75,13 +89,13 @@ class CreateAccount(webapp2.RequestHandler):
         else:
             user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
             user.put()
-            self.redirect('/profiles')
+            self.redirect('/search')
 
 
 app = webapp2.WSGIApplication([
     ('/', Home),
     ('/search', Search),
-    ('/authorize', Authorize),
+    # ('/authorize', Authorize),
     ('/profiles', Profiles),
     ('/createaccount', CreateAccount)
 ], debug=True)
