@@ -24,7 +24,7 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  /*top: 355%; */
+  /* top: 355%; */
   /* left: 500%; */
   justify-content: center;
   color: #ffffff
@@ -32,13 +32,13 @@ body {
 }
 
 input {
-  /* background-image: url('https://www.naturalnavigator.com/_client/themes/default/images/icon-search.png');
-  background-size: 70px; */
+  background-image: url('https://www.naturalnavigator.com/_client/themes/default/images/icon-search.png');
+  background-size: 70px;
   justify-content: center;
-  /* background-repeat: no-repeat;
-  background-position: left;
-  line-height: 20%;*/
-  width: 50%;
+  background-repeat: no-repeat;
+  background-position: right;
+  /* line-height: 20%;*/
+  width: 80%;
   height: 60px;
   background-color: transparent;
   color: #ffffff;
