@@ -20,6 +20,7 @@
 h1 {
   display: flex;
   justify-content: center;
+  font-family: 'Libre Franklin', sans-serif;
 }
 
 nav {
