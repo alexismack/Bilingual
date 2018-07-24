@@ -1,0 +1,64 @@
+html {
+  height: 100%;
+}
+body {
+  background-color: #F2e2cd;
+  height: 100%;
+  background: url(https://images.unsplash.com/photo-1444309251453-6b95825ea872?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=2646f33e9cd1ace3ea4d66448a0df988&auto=format&fit=crop&w=1567&q=80) no-repeat center center fixed;
+}
+
+.img {
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+
+.img img {
+  height: 150%;
+  width: 150%;
+  z-index: -1;
+  position: absolute;
+}
+
+.search_bar {
+  height: 15%;
+  display: flex;
+  align-items: center;
+  /* top: 355%; */
+  /* left: 500%; */
+  justify-content: center;
+  color: #ffffff
+
+}
+
+input {
+  background-image: url('https://www.naturalnavigator.com/_client/themes/default/images/icon-search.png');
+  background-size: 70px;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: right;
+
+  /* line-height: 20%;*/
+  width: 80%;
+  height: 60px;
+  background-color: transparent;
+  color: #000000;
+  /* position: absolute; */
+  top: 50%;
+  left: 50%;
+  font-size: 200%;
+  border-style: solid;
+  border-color: white;
+}
+
+::placeholder {
+  color: #ffffff;
+}
+
+
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
