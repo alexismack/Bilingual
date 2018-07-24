@@ -4,6 +4,7 @@ import os
 import json
 from google.appengine.ext import ndb
 from google.appengine.api import users
+from models import User
 
 jinja_environment = jinja2.Environment(
     loader = jinja2.FileSystemLoader(
@@ -56,20 +57,25 @@ class CreateAccount(webapp2.RequestHandler):
         template = jinja_environment.get_template('createaccount.html')
         self.response.write(template.render())
         # template = jinja_environment.get_template('createaccount.html')
+    def post(self):
+        template = jinja_environment.get_template('createaccount.html')
         name = self.request.get("name")
         email = self.request.get("email")
         city = self.request.get("city")
         country = self.request.get("country")
         availability = self.request.get("availability")
-        timespan = self.request.get("timespan")
+        time_span = self.request.get("timespan")
+        print(email)
         key = ndb.Key("User", email)
         exists = key.get()
-        variables = {'email': email + 'already extists'}
+        variables = {'email': email + ' already extists'}
         if exists:
             self.response.write(template.render(variables))
         else:
-            user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, timespan=timespan)
+            user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
             user.put()
+            self.redirect('/profiles')
+
 
 app = webapp2.WSGIApplication([
     ('/', Home),

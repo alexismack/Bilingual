@@ -16,6 +16,3 @@ class User(ndb.Model):
     time_span = ndb.StringProperty(required=True)
     name = ndb.StringProperty(required=True)
     email = ndb.StringProperty(required=True)
-    user_id = ndb.StringProperty(required=True)
-
-print(User.Availability)
