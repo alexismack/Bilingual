@@ -52,14 +52,14 @@ class Home(webapp2.RequestHandler):
 #         self.response.out.write(template.render(variables))
 
 
-class Search(webapp2.RequestHandler):
-    def get(self):
-        template = jinja_environment.get_template('search.html')
-        self.response.write(template.render())
+# class Search(webapp2.RequestHandler):
+#     def get(self):
+#         template = jinja_environment.get_template('search.html')
+#         self.response.write(template.render())
 
-    def post(self):
-        template = jinja_environment.get_template('results.html')
-        self.response.write(template.render())
+    # def post(self):
+    #     template = jinja_environment.get_template('results.html')
+    #     self.response.write(template.render())
 
 class Profiles(webapp2.RequestHandler):
     def get(self):
@@ -77,6 +77,11 @@ class Profiles(webapp2.RequestHandler):
                         'availability': individual.availability,
                         }
             self.response.write(template.render(variables))
+
+class Results(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('results.html')
+        self.response.write(template.render())
 
 class CreateAccount(webapp2.RequestHandler):
     def get(self):
@@ -106,8 +111,9 @@ class CreateAccount(webapp2.RequestHandler):
 
 app = webapp2.WSGIApplication([
     ('/', Home),
-    ('/search', Search),
+    # ('/search', Search),
     # ('/authorize', Authorize),
     ('/profiles', Profiles),
-    ('/createaccount', CreateAccount)
+    ('/createaccount', CreateAccount),
+    ('/results', Results)
 ], debug=True)

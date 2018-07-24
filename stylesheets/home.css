@@ -1,6 +1,10 @@
+html {
+  height: 100%;
+}
+
 .body {
   background: url(https://images.unsplash.com/photo-1508353140085-93af0d08ff12?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=f1814b21a26bbf7c534321796cfe53e7&auto=format&fit=crop&w=1950&q=80) no-repeat center center fixed;
-
+  height: 100%;
 }
 
 .img {
@@ -15,13 +19,7 @@
 
 .topline {
   display: grid;
-  grid-template-columns: 25% 50% 25%;
-}
-
-h1 {
-  display: flex;
-  justify-content: center;
-  font-family: 'Libre Franklin', sans-serif;
+  grid-template-columns: 50% 50%;
 }
 
 nav {
@@ -31,17 +29,52 @@ nav {
 }
 
 a, button {
+  font-family: 'Oxygen', sans-serif;
   font-size: 20px;
-  color: black;
-  background-color: white;
-  border-radius: 15px;
+  color: white;
+  background-color: transparent;
+  border: none;
+  /* border-radius: 15px; */
   /* margin: 5px; */
   text-decoration: none;
-  padding: 5px;
-  border: 2px solid black;
+  padding: 10px;
+  /* border: 2px solid black; */
+}
+
+button {
+  cursor: pointer;
 }
 
 .translate {
   display: flex;
   align-items: center;
+}
+
+.search_bar {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  /* top: 355%; */
+  /* left: 500%; */
+  justify-content: center;
+  color: #ffffff
+}
+
+input {
+  background-image: url('https://www.naturalnavigator.com/_client/themes/default/images/icon-search.png');
+  background-size: 70px;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: right;
+  width: 80%;
+  height: 60px;
+  background-color: transparent;
+  color: #ffffff;
+  top: 50%;
+  left: 50%;
+  font-size: 200%;
+}
+
+::placeholder {
+  color: #ffffff;
 }
