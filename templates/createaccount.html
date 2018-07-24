@@ -3,29 +3,42 @@
   <head>
     <meta charset="utf-8">
     <title>Create Account</title>
+    <link rel="stylesheet" href="/stylesheets/createaccount.css">
+    <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
+
   </head>
   <body>
+    <div class="form">
     <form method="post"> <!-- Change action -->
+      <input class="box" name="name" placeholder=" Name">
+      <input class="box" name="email" placeholder=" email@example.com">
 
-      <input name="name" placeholder="name">
-      <input name="email" placeholder="email@example.com">
+      <input class="box" name="city" placeholder=" Home City">
+      <input class="box" name="country" placeholder=" Home Country"><br>
+      <p>{{email}}</p>
+    <!-- </div> -->
+    <!-- <div class="right"> -->
+      <p>Availability of time to spend with friend</p>
 
-      <p>Your home location:</p>
-      <input name="city" placeholder="City">
-      <input name="country" placeholder="Country"><br>
-
-      <p>Availability of time to spend with friend:</p>
-      <input type="radio" name="availability" value="high">High<br>
-      <input type="radio" name="availability" value="medium">Medium<br>
-      <input type="radio" name="availability" value="low">Low<br>
-
+      <div class="slidecontainer">
+        <span>Low</span>
+        <span>Medium</span>
+        <span>High</span>
+        <br>
+        <input type="range" name="availability" min="1" max="3" value="2" class="slider" id="myRange">
+      </div>
       <p>How long would you like to welcome someone?</p>
-      <input type="checkbox" name="timespan" value="short">Short Term (less than two weeks)<br>
-      <input type="checkbox" name="timespan" value="mid">Mid Term (less than three months)<br>
-      <input type="checkbox" name="timespan" value="long">Long Term (staying for a while)<br>
+      <div class="checkboxes">
+        <div class=""></div>
+        <input type="checkbox" name="timespan" value="short"><span class="checks">Short Term (less than two weeks)</span>
+        <div class=""></div>
+        <input type="checkbox" name="timespan" value="mid"><span class="checks">Mid Term (less than three months)</span>
+        <div class=""></div>
+        <input type="checkbox" name="timespan" value="long"><span class="checks">Long Term (staying for a while)</span>
+      </div>
 
       <button name="button">Create Account</button>
     </form>
-    <p>{{email}}</p>
+    </div>
   </body>
 </html>

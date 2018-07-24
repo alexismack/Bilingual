@@ -1,0 +1,80 @@
+html {
+  height: 100%;
+}
+
+body {
+  height: 100%;
+  background: url(
+https://images.unsplash.com/photo-1440913846014-90f66ff0e334?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=bef135fe947dd1212153d722e1c7b02d&auto=format&fit=crop&w=1650&q=80 ) no-repeat center center fixed;
+}
+
+p {
+  color: black;
+  font-size: 200%;
+  text-align: center;
+  font-family: 'Oxygen', sans-serif;
+}
+span {
+  font-family: 'Oxygen', sans-serif;
+}
+
+.box {
+  font-family: 'Oxygen', sans-serif;
+  padding: 5px;
+  width: 80%;
+  height: 3.5%;
+  background-color: transparent;
+  color: #000;
+  border-color: white;
+  font-size: 200%;
+  border-style: solid;
+  margin: 10px;
+}
+
+::placeholder {
+  color: #000;
+  font-family: 'Oxygen', sans-serif;
+}
+
+input[name="name"] {
+  margin-top: 50px;
+}
+.checks {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 100%;
+}
+
+.form {
+    opacity: 0.8;
+    text-align: center;
+    background-color: #f2e2cd;
+    height: auto;
+    /* background-color: #F2E2CD; */
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 5%;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    margin-bottom: 5%;
+}
+
+.slidecontainer p{
+  font-size: 100%
+}
+
+button {
+  font-family: 'Oxygen', sans-serif;
+  font-size: 150%;
+  background-color: transparent;
+  border-color: white;
+  border-width: 3px;
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.checkboxes {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 30% 5% 65%;
+}

@@ -99,7 +99,7 @@ class CreateAccount(webapp2.RequestHandler):
         print(email)
         key = ndb.Key("User", email)
         exists = key.get()
-        variables = {'email': email + ' already extists',}
+        variables = {'email': email + ' already exists',}
         if exists:
             self.response.write(template.render(variables))
         else:
