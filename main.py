@@ -68,9 +68,10 @@ class CreateAccount(webapp2.RequestHandler):
         print(email)
         key = ndb.Key("User", email)
         exists = key.get()
-        variables = {'email': email + ' already extists'}
+        variables = {'email': email + ' already extists',}
+        template2 = jinja_environment.get_template('profiles.html')
         if exists:
-            self.response.write(template.render(variables))
+            self.response.write(template2.render(variables))
         else:
             user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
             user.put()
