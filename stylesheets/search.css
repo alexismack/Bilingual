@@ -1,8 +1,10 @@
+html {
+  height: 100%;
+}
 body {
 /* background-color: transparent; */
-
+  height: 100%;
   background: url(https://images.unsplash.com/photo-1502825305473-fedeffa5b12c?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=d21c1b001a63b9c042f6d215e765bf3f&auto=format&fit=crop&w=1952&q=80) no-repeat center center fixed;
-
 }
 
 .img {
@@ -19,22 +21,28 @@ body {
 }
 
 .search_bar {
+  height: 100%;
   display: flex;
-  justify-content: center;
   align-items: center;
-  top: 355%;
-  left: 500%;
-  position: fixed;
+  /* top: 355%; */
+  /* left: 500%; */
+  justify-content: center;
   color: #ffffff
 
 }
+
 input {
-  line-height: 20%;
+  background-image: url('https://www.naturalnavigator.com/_client/themes/default/images/icon-search.png');
+  background-size: 70px;
+  justify-content: center;
+  background-repeat: no-repeat;
+  background-position: right;
+  /* line-height: 20%;*/
   width: 80%;
   height: 60px;
   background-color: transparent;
   color: #ffffff;
-  position: fixed;
+  /* position: absolute; */
   top: 50%;
   left: 50%;
   font-size: 200%;
