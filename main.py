@@ -9,6 +9,7 @@ from models import User
 jinja_environment = jinja2.Environment(
     loader = jinja2.FileSystemLoader(
         os.path.dirname(__file__) + '/templates'))
+search_term = " "
 
 class Home(webapp2.RequestHandler):
     def get(self):
@@ -29,6 +30,13 @@ class Home(webapp2.RequestHandler):
         }
         self.response.out.write(template.render(variables))
 
+
+    def post(self):
+        template = jinja_environment.get_template('home.html')
+        global search_term
+        search_term = self.request.get("search")
+        self.redirect('/results')
+        # self.response.write(template.render())
 
 # class Authorize(webapp2.RequestHandler):
 #     def get(self):
@@ -81,7 +89,9 @@ class Profiles(webapp2.RequestHandler):
 class Results(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('results.html')
-        self.response.write(template.render())
+        variable = {'search_term': search_term}
+        self.response.write(template.render(variable))
+
 
 class CreateAccount(webapp2.RequestHandler):
     def get(self):
