@@ -10,12 +10,12 @@
   </head>
   <body>
     <div class="topline">
-    <nav class="left_nav">
-      <a href="/"> Home </a>
-    </nav>
-    <form class="search_bar" method="post">
-      <input type = "text" name = "search" placeholder="  {{search_term}}"/>
-    </form>
+      <nav class="left_nav">
+        <a href="/"> Home </a>
+      </nav>
+      <form class="search_bar" method="post">
+        <input type = "text" name = "search" placeholder="  {{search_term}}"/>
+      </form>
       <nav class="right_nav">
         <a href="{{log_url}}">{{log_message}}</a>
         {% if not individual %}
@@ -26,53 +26,51 @@
         {% endif %}
       </nav>
     </div>
-    </div>
     <center>
     <div class = "row">
       <div class = "column">
-        <h1> User Left </h1>
+        <h1> {{name0}} </h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i>Contact</button>
       </div>
       <div class = "column">
-        <h1> User Middle </h1>
+        <h1> {{name1}} </h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i> Contact</button>
       </div>
       <div class = "column">
-        <h1> User Right </h1>
+        <h1> {{name2}} </h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i> Contact</button>
       </div>
     </div>
     <br/>
     <div class = "row">
       <div class = "column">
-        <h1> User Left </h1>
+        <h1> {{name3}} </h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i>Contact</button>
       </div>
       <div class = "column">
-        <h1> User Middle </h1>
+        <h1> {{name4}}</h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i> Contact</button>
       </div>
       <div class = "column">
-        <h1> User Right </h1>
+        <h1> {{name5}}</h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i> Contact</button>
       </div>
     </div>
     <br/>
     <div class = "row">
       <div class = "column">
-        <h1> User Left </h1>
+        <h1> {{name6}} </h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i>Contact</button>
       </div>
       <div class = "column">
-        <h1> User Middle </h1>
+        <h1> {{name7}} </h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i> Contact</button>
       </div>
       <div class = "column">
-        <h1> User Right </h1>
+        <h1> {{name8}} </h1>
         <button type="button" name="Contact"> <i class="material-icons">perm_contact_calendar</i> Contact</button>
       </div>
     </div>
-
   </center>
   </body>
 </html>
