@@ -96,9 +96,15 @@ class Profiles(webapp2.RequestHandler):
 class Results(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('results.html')
-        variable = {'search_term': search_term}
-        self.response.write(template.render(variable))
+        variable = {'search_term': search_term,
+                    }
 
+        my_query = User.query().fetch()
+        for i in my_query:
+            my_name = i.name + "*"
+        print(my_name)
+            # variable['my_query': my_name]
+        self.response.write(template.render(variable))
 
 class CreateAccount(webapp2.RequestHandler):
     def get(self):
