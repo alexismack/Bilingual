@@ -78,6 +78,7 @@ class Profiles(webapp2.RequestHandler):
         if current:
             key = ndb.Key('User', current.email())
             individual = key.get()
+
             variables = {'name': individual.name,
                         'email': individual.email,
                         'city': individual.city,
@@ -85,9 +86,21 @@ class Profiles(webapp2.RequestHandler):
                         'time_span': individual.time_span,
                         'availability': individual.availability,
                         }
+            if individual.image:
+                variables['avatar'] = base64.b64encode(individual.image)
             self.response.write(template.render(variables))
+
         else:
             self.redirect('/')
+    def post(self):
+        current = users.get_current_user()
+        if current:
+            key = ndb.Key('User', current.email())
+            individual = key.get()
+            avatar = self.request.get('avatar')
+            individual.image = avatar
+            individual.put()
+        self.redirect('/profiles')
 
 class Results(webapp2.RequestHandler):
     def get(self):
