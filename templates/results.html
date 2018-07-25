@@ -9,12 +9,22 @@
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
   </head>
   <body>
-    <nav>
-      <i class="material-icons"> accessibility_new </i>
-      <a href="/"> Home </a> 
-    </nav>
-    <div class="search_bar">
-      <input type = "text" name = "search" placeholder="  {{search_term}}"/>
+    <div class="topline">
+      <nav class="left_nav">
+        <a href="/"> Home </a>
+      </nav>
+      <form class="search_bar" method="post">
+        <input type = "text" name = "search" placeholder="  {{search_term}}"/>
+      </form>
+      <nav class="right_nav">
+        <a href="{{log_url}}">{{log_message}}</a>
+        {% if not individual %}
+        <a href="{{sign_up_url}}">Sign Up</a>
+        {% endif %}
+        {% if individual %}
+        <a href="/profiles"> Profile </a>
+        {% endif %}
+      </nav>
     </div>
     <center>
     <div class = "row">

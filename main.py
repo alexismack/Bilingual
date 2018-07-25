@@ -100,8 +100,32 @@ class Profiles(webapp2.RequestHandler):
 class Results(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('results.html')
-        variable = {'search_term': search_term}
-        self.response.write(template.render(variable))
+        individual = users.get_current_user()
+        if individual:
+            #user is logged in
+            log_url = users.create_logout_url('/')
+            log_message = 'Log Out'
+            sign_up_url = users.create_login_url('/createaccount')
+
+        if not individual:
+            #user is not logged in
+            log_url = users.create_login_url('/')
+            log_message = 'Log In'
+            sign_up_url = users.create_login_url('/createaccount')
+        variables = {
+            'individual': individual,
+            'log_url': log_url,
+            'log_message': log_message,
+            'sign_up_url': sign_up_url,
+            'search_term': search_term
+        }
+        self.response.write(template.render(variables))
+    def post(self):
+        template = jinja_environment.get_template('results.html')
+        global search_term
+        search_term = self.request.get("search")
+        variables = {'search_term': search_term}
+        self.response.write(template.render(variables))
 
 
 class CreateAccount(webapp2.RequestHandler):
