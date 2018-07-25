@@ -82,12 +82,10 @@ class Profiles(webapp2.RequestHandler):
         if current:
             key = ndb.Key('User', current.email())
             individual = key.get()
-<<<<<<< HEAD
 
-=======
             log_url = users.create_logout_url('/')
             log_message = 'Log Out'
->>>>>>> 5bea088595d544928d69f1185937b67ddddfd490
+
             variables = {'name': individual.name,
                         'email': individual.email,
                         'city': individual.city,
