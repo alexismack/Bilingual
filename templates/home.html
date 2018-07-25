@@ -13,14 +13,18 @@
       </div>
       <nav>
         <a href="{{log_url}}">{{log_message}}</a>
-        <a href="/createaccount">Sign Up</a>
+        {% if not individual %}
+        <a href="{{sign_up_url}}">Sign Up</a>
+        {% endif %}
+        {% if individual %}
         <a href="/profiles"> Profile </a>
+        {% endif %}
       </nav>
     </div>
 
-      <form class="search_bar" method="post">
-        <input type = "text" name="search" placeholder="  Try &quot;Italy&quot"/>
-      </form>
+    <form class="search_bar" method="post">
+      <input type = "text" name="search" placeholder="  Try &quot;Italy&quot"/>
+    </form>
 
   <!--  <div class="img">
       <img src="../images/small_group.jpg" alt="people talking happily">

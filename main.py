@@ -20,14 +20,18 @@ class Home(webapp2.RequestHandler):
             #user is logged in
             log_url = users.create_logout_url('/')
             log_message = 'Log Out'
+            sign_up_url = users.create_login_url('/createaccount')
+
         if not individual:
             #user is not logged in
             log_url = users.create_login_url('/')
             log_message = 'Log In'
+            sign_up_url = users.create_login_url('/createaccount')
         variables = {
             'individual': individual,
             'log_url': log_url,
             'log_message': log_message,
+            'sign_up_url': sign_up_url,
         }
         self.response.out.write(template.render(variables))
 
@@ -78,13 +82,20 @@ class Profiles(webapp2.RequestHandler):
         if current:
             key = ndb.Key('User', current.email())
             individual = key.get()
+<<<<<<< HEAD
 
+=======
+            log_url = users.create_logout_url('/')
+            log_message = 'Log Out'
+>>>>>>> 5bea088595d544928d69f1185937b67ddddfd490
             variables = {'name': individual.name,
                         'email': individual.email,
                         'city': individual.city,
                         'country': individual.country,
                         'time_span': individual.time_span,
                         'availability': individual.availability,
+                        'log_url': log_url,
+                        'log_message': log_message,
                         }
             if individual.image:
                 variables['avatar'] = base64.b64encode(individual.image)
@@ -122,16 +133,22 @@ class CreateAccount(webapp2.RequestHandler):
         country = self.request.get("country")
         availability = self.request.get("availability")
         time_span = self.request.get("timespan")
-        print(email)
         key = ndb.Key("User", email)
         exists = key.get()
-        variables = {'email': email + ' already exists',}
+        email_exists = {'email': email + ' already exists'}
+        incomplete_message = "Please fill out completely"
+        field_empty = {'incomplete_message': incomplete_message}
         if exists:
-            self.response.write(template.render(variables))
+            self.response.write(template.render(email_exists))
         else:
-            user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
-            user.put()
-            self.redirect('/profiles')
+            if template=="" or name=="" or email=="" or city=="" or country=="" or availability=="" or timespan=="":
+                self.response.write(template.render(field_empty))
+            else:
+                user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
+                user.put()
+                key = ndb.Key("User", email)
+                exists = key.get()
+                self.redirect('/profiles')
 
 
 
