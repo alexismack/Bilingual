@@ -118,6 +118,8 @@ class CreateAccount(webapp2.RequestHandler):
         else:
             user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
             user.put()
+            key = ndb.Key("User", email)
+            exists = key.get()
             self.redirect('/profiles')
 
 
