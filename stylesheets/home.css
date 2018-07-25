@@ -54,6 +54,7 @@ button {
   height: 100%;
   display: flex;
   align-items: center;
+  font-family: 'Oxygen', sans-serif;
   /* top: 355%; */
   /* left: 500%; */
   justify-content: center;
@@ -71,6 +72,7 @@ input {
   background-color: transparent;
   color: #ffffff;
   top: 50%;
+  font-family: 'Oxygen', sans-serif;
   left: 50%;
   font-size: 200%;
   border-style: solid;
