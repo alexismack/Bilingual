@@ -2,6 +2,7 @@ import jinja2
 import webapp2
 import os
 import json
+import base64
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from models import User
