@@ -25,7 +25,7 @@
 
           <div>
               <label for="avatar">Profile picture:</label>
-              <img src = "data:image/jpg;base64,{{avatar}}" width = 60px height= 60px>
+              <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
               <form method = "post" enctype="multipart/form-data">
 
               <input type="file"
@@ -46,14 +46,8 @@
           {{time_span}}
           {{availability}}
       </div>
-         <div class = message>
-        <font color = "black">
-        <div class = msg >
-           SEND MESSAGE
+         <div class = message> SEND MESSAGE  <i class="material-icons">message</i>
            {{denied}}
-
-
-           <i class="material-icons">message</i>
          </font>
        </div>
      </div>
