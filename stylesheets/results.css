@@ -20,30 +20,49 @@ body {
   position: absolute;
 }
 
+.topline {
+  display: grid;
+  grid-template-columns: 20% 60% 20%;
+}
+
+nav {
+  color: white;
+}
+
+nav a{
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+.left_nav {
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  /* border-radius: 15px; */
+  /* margin: 5px; */
+  /* border: 2px solid black; */
+}
+
 .search_bar {
-  height: 15%;
+  height: auto;
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   /* top: 355%; */
   /* left: 500%; */
   justify-content: center;
   color: #ffffff
-
 }
 
 input {
   background-image: url('https://www.naturalnavigator.com/_client/themes/default/images/icon-search.png');
   background-size: 70px;
-  justify-content: center;
   background-repeat: no-repeat;
   background-position: right;
-
-  /* line-height: 20%;*/
   width: 80%;
   height: 60px;
   background-color: transparent;
-  color: #000000;
-  /* position: absolute; */
+  color: #ffffff;
   top: 50%;
   left: 50%;
   font-size: 200%;
@@ -55,13 +74,19 @@ input {
   color: #ffffff;
 }
 
-
-
-nav {
+.right_nav {
+  font-size: 20px;
+  background-color: transparent;
+  border: none;
+  /* border-radius: 15px; */
+  /* margin: 5px; */
+  /* border: 2px solid black; */
   display: flex;
-  align-items: center;
   justify-content: flex-end;
-  color: white;
+}
+
+.right_nav a {
+  padding: 10px;
 }
 
 h1{
@@ -87,19 +112,4 @@ h1{
 button{
   background-color: Black;
   color: white;
-}
-
-
-nav {
-  float: right;
-  font-family: 'Oxygen', sans-serif;
-  font-size: 20px;
-  color: white;
-  background-color: transparent;
-  border: none;
-  /* border-radius: 15px; */
-  /* margin: 5px; */
-  text-decoration: none;
-  padding: 10px;
-  /* border: 2px solid black; */
 }
