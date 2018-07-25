@@ -13,10 +13,12 @@
       </div>
       <nav>
         <a href="{{log_url}}">{{log_message}}</a>
-        <a href="/createaccount">Sign Up</a>
-        <!-- {% if individual %} -->
+        {% if not individual %}
+        <a href="{{sign_up_url}}">Sign Up</a>
+        {% endif %}
+        {% if individual %}
         <a href="/profiles"> Profile </a>
-        <!-- {% endif %} -->
+        {% endif %}
       </nav>
     </div>
 

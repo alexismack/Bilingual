@@ -20,14 +20,18 @@ class Home(webapp2.RequestHandler):
             #user is logged in
             log_url = users.create_logout_url('/')
             log_message = 'Log Out'
+            sign_up_url = users.create_login_url('/createaccount')
+
         if not individual:
             #user is not logged in
             log_url = users.create_login_url('/')
             log_message = 'Log In'
+            sign_up_url = users.create_login_url('/createaccount')
         variables = {
             'individual': individual,
             'log_url': log_url,
             'log_message': log_message,
+            'sign_up_url': sign_up_url,
         }
         self.response.out.write(template.render(variables))
 
@@ -100,8 +104,24 @@ class CreateAccount(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('createaccount.html')
         self.response.write(template.render())
+
+
         # template = jinja_environment.get_template('createaccount.html')
     def post(self):
+        individual = users.get_current_user()
+        if individual:
+            #user is logged in
+            log_url = users.create_logout_url('/')
+            log_message = 'Log Out'
+        if not individual:
+            #user is not logged in
+            log_url = users.create_login_url('/')
+            log_message = 'Log In'
+        variables = {
+            'individual': individual,
+            'log_url': log_url,
+            'log_message': log_message,
+        }
         template = jinja_environment.get_template('createaccount.html')
         name = self.request.get("name")
         email = self.request.get("email")
