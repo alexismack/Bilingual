@@ -9,21 +9,13 @@
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
   </head>
   <body>
-<<<<<<< HEAD
-    <nav>
-      <i class="material-icons"> accessibility_new </i>
+    <div class="topline">
+    <nav class="left_nav">
       <a href="/"> Home </a>
     </nav>
-    <div class="search_bar">
+    <form class="search_bar" method="post">
       <input type = "text" name = "search" placeholder="  {{search_term}}"/>
-=======
-    <div class="topline">
-      <nav class="left_nav">
-        <a href="/"> Home </a>
-      </nav>
-      <form class="search_bar" method="post">
-        <input type = "text" name = "search" placeholder="  {{search_term}}"/>
-      </form>
+    </form>
       <nav class="right_nav">
         <a href="{{log_url}}">{{log_message}}</a>
         {% if not individual %}
@@ -33,7 +25,7 @@
         <a href="/profiles"> Profile </a>
         {% endif %}
       </nav>
->>>>>>> 49fba3db190d032f3132e3099ff21dacfbf61409
+    </div>
     </div>
     <center>
     <div class = "row">
