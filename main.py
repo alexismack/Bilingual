@@ -141,7 +141,6 @@ class Results(webapp2.RequestHandler):
         variables = {'search_term': search_term}
         self.response.write(template.render(variables))
 
-
 class CreateAccount(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('createaccount.html')
