@@ -85,6 +85,8 @@ class Profiles(webapp2.RequestHandler):
                         'availability': individual.availability,
                         }
             self.response.write(template.render(variables))
+        else:
+            self.redirect('/')
 
 class Results(webapp2.RequestHandler):
     def get(self):
