@@ -162,7 +162,7 @@ class CreateAccount(webapp2.RequestHandler):
         if exists:
             self.response.write(template.render(email_exists))
         else:
-            if template=="" or name=="" or email=="" or city=="" or country=="" or availability=="" or timespan=="":
+            if template=="" or name=="" or email=="" or city=="" or country=="" or availability=="" or not time_span:
                 self.response.write(template.render(field_empty))
             else:
                 user = User(key=key, name=name, email=email, city=city, country=country, availability=availability, time_span=time_span)
