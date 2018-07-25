@@ -116,11 +116,13 @@ class Results(webapp2.RequestHandler):
         template = jinja_environment.get_template('results.html')
         variable = {'search_term': search_term,
                     }
-
-        my_query = User.query().fetch()
+        my_query = User.query(User.country == search_term).order(User.city).fetch()
+        print(my_query)
         for i in my_query:
-            my_name = i.name + "*"
-        print(my_name)
+            counter = 1
+            variable["name" + str(counter)] = i.name
+            counter+=1
+        print variable
             # variable['my_query': my_name]
         self.response.write(template.render(variable))
 
