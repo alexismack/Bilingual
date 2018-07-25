@@ -25,9 +25,14 @@
 
           <div>
               <label for="avatar">Profile picture:</label>
+              <img src = "data:image/jpg;base64,{{avatar}}" width = 60px height= 60px>
+              <form method = "post" enctype="multipart/form-data">
+
               <input type="file"
                      id="avatar" name="avatar"
                      accept="image/png, image/jpeg" />
+              <button> Submit </button>
+              </form>
           </div>
 
       </fieldset>
@@ -43,11 +48,11 @@
       </div>
          <div class = message>
         <font color = "black">
-
         <div class = msg >
            SEND MESSAGE
            {{denied}}
-           
+
+
            <i class="material-icons">message</i>
          </font>
        </div>
