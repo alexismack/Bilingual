@@ -206,6 +206,8 @@ class OtherProfile(webapp2.RequestHandler):
         template = jinja_environment.get_template('profiles.html')
         email = self.request.get("email")
         individual = users.get_current_user()
+        user_email = individual.email
+        print(user_email)
         if individual:
             #user is logged in
             log_url = users.create_logout_url('/')
