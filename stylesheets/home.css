@@ -25,12 +25,13 @@ html {
 .test {
   transform: translateX(-50%);
   text-align: center;
+  justify-content: center;
   white-space: nowrap;
   margin-left: 50%;
   overflow: hidden;
   color: white;
   width: 20em;
-  /* font-size: 80px; */
+  font-size: 80px;
   font-family: 'Oxygen', sans-serif;
   animation: type 4s steps(60, end);
 }
