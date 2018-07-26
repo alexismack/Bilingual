@@ -133,7 +133,6 @@ class Results(webapp2.RequestHandler):
             'sign_up_url': sign_up_url,
             'search_term': search_term
         }
-        variables = {'search_term': search_term}
         print search_term
 
         my_query = User.query(User.country == search_term).order(User.city).fetch()
@@ -151,9 +150,27 @@ class Results(webapp2.RequestHandler):
 
     def post(self):
         template = jinja_environment.get_template('results.html')
+        individual = users.get_current_user()
+        if individual:
+            #user is logged in
+            log_url = users.create_logout_url('/')
+            log_message = 'Log Out'
+            sign_up_url = users.create_login_url('/createaccount')
+
+        if not individual:
+            #user is not logged in
+            log_url = users.create_login_url('/')
+            log_message = 'Log In'
+            sign_up_url = users.create_login_url('/createaccount')
         global search_term
         search_term = self.request.get("search")
-        variables = {'search_term': search_term}
+        variables = {
+            'log_url': log_url,
+            'log_message': log_message,
+            'sign_up_url': sign_up_url,
+            'individual': individual,
+            'search_term': search_term
+        }
         print search_term
 
         my_query = User.query(User.country == search_term).order(User.city).fetch()
