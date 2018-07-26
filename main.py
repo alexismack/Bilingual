@@ -142,7 +142,8 @@ class Results(webapp2.RequestHandler):
             variables["name" + str(counter)] = i.name
             variables["city" + str(counter)] = i.city
             variables["email" + str(counter)] = i.email
-            variables["image" + str(counter)] = i.image
+            if i.image:
+                variables["image" + str(counter)] = base64.b64encode(i.image)
             counter = counter + 1
         print variables
             # variable['my_query': my_name]
