@@ -160,3 +160,11 @@ input {
 ::placeholder {
   color: #ffffff;
 }
+
+h1{
+  align-items: center;
+  justify-content: center;
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  text-shadow: 1px 1px;
+}

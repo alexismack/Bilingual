@@ -41,6 +41,13 @@ class Home(webapp2.RequestHandler):
         global search_term
         search_term = self.request.get("search")
         self.redirect('/results')
+        my_query = User.query(User.country == search_term).order(User.city).fetch()
+        print(my_query)
+        variables = {'search_term':search_term}
+        counter = 0
+        for i in my_query:
+            variables["name" + str(counter)] = i.name
+            counter = counter + 1
         # self.response.write(template.render())
 
 # class Authorize(webapp2.RequestHandler):
@@ -134,11 +141,13 @@ class Results(webapp2.RequestHandler):
             'search_term': search_term
         }
         self.response.write(template.render(variables))
+
     def post(self):
         template = jinja_environment.get_template('results.html')
         global search_term
         search_term = self.request.get("search")
         variables = {'search_term': search_term}
+        print search_term
 
         my_query = User.query(User.country == search_term).order(User.city).fetch()
         print(my_query)
@@ -146,11 +155,12 @@ class Results(webapp2.RequestHandler):
         for i in my_query:
 
             variables["name" + str(counter)] = i.name
+            variables["city" + str(counter)] = i.city
+            variables["email" + str(counter)] = i.email
+            variables["image" + str(counter)] = i.image
             counter = counter + 1
-            print variables
 
         print variables
-
             # variable['my_query': my_name]
         self.response.write(template.render(variables))
 
