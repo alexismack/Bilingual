@@ -60,7 +60,9 @@
           <legend>Your Story <i class="material-icons">language</i></legend>
           <div>
               <label for="journey">Share Your Journey:</label>
+              {%for journey in journies%}
               <img src = "data:image/jpg;base64,{{journey}}" width = 100px height= 80px>
+              {%endfor%}
               <form method = "post" enctype="multipart/form-data">
               <div class="journey">
                 <input type="file"
