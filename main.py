@@ -146,6 +146,8 @@ class Results(webapp2.RequestHandler):
         for i in my_query:
 
             variables["name" + str(counter)] = i.name
+            variables["city" + str(counter)] = i.city
+            variables["email" + str(counter)] = i.email
             counter = counter + 1
             print variables
 
