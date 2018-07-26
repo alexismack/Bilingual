@@ -206,8 +206,6 @@ class OtherProfile(webapp2.RequestHandler):
         template = jinja_environment.get_template('profiles.html')
         email = self.request.get("email")
         individual = users.get_current_user()
-        user_email = individual.email
-        print(user_email)
         if individual:
             #user is logged in
             log_url = users.create_logout_url('/')
@@ -227,10 +225,11 @@ class OtherProfile(webapp2.RequestHandler):
             'country': other_user.country,
             'time_span': other_user.time_span,
             'availability': other_user.availability,
-            'image': other_user.image,
             'log_url': log_url,
             'log_message': log_message,
         }
+        if other_user.image:
+            variables["avatar"] = base64.b64encode(other_user.image)
         self.response.write(template.render(variables))
 
 class CreateAccount(webapp2.RequestHandler):
