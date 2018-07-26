@@ -225,6 +225,7 @@ class OtherProfile(webapp2.RequestHandler):
             'country': other_user.country,
             'time_span': other_user.time_span,
             'availability': other_user.availability,
+            'image': other_user.image,
             'log_url': log_url,
             'log_message': log_message,
         }
