@@ -225,10 +225,10 @@ class OtherProfile(webapp2.RequestHandler):
             'country': other_user.country,
             'time_span': other_user.time_span,
             'availability': other_user.availability,
-            'image': other_user.image,
             'log_url': log_url,
             'log_message': log_message,
         }
+        variables["image"] = base64.b64encode(other_user.image)
         self.response.write(template.render(variables))
 
 class CreateAccount(webapp2.RequestHandler):
