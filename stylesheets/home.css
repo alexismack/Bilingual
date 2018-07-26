@@ -22,6 +22,85 @@ html {
   justify-content: flex-end;
 }
 
+.test {
+  transform: translateX(-50%);
+  text-align: center;
+  white-space: nowrap;
+  margin-left: 50%;
+  overflow: hidden;
+  color: white;
+  width: 20em;
+  /* font-size: 80px; */
+  font-family: 'Oxygen', sans-serif;
+  animation: type 4s steps(60, end);
+}
+
+.test:nth-child(2){
+  animation: type2 3s steps(60, end);
+}
+
+.test span{
+  animation: blink 1s infinite;
+}
+
+
+@keyframes type{
+  from { width: 0; }
+}
+
+@keyframes type2{
+  0%{width: 0;}
+  50%{width: 50;}
+  100%{width: 100;}
+}
+
+@keyframes blink{
+  to{opacity: .0;}
+}
+/* .line-1{
+    height: 60%;
+    align-items: center;
+    position: relative;
+    top: 50%;
+    width: 24em;
+    margin: 0 auto;
+    border-right: 2px solid rgba(255,255,255,.75);
+    font-size: 365%;
+    font-weight: 50;
+    text-align: center;
+    justify-content: center;
+    color: white;
+    white-space: nowrap;
+    overflow: hidden;
+    transform: translateY(-50%);
+    font-family: 'Oxygen', sans-serif;
+    display: flex-end;
+    align-items: center;
+
+}
+
+/* Animation */
+/* .anim-typewriter{
+  animation: typewriter 4s steps(64) 1s 1 normal both,
+             blinkTextCursor 700ms steps(40) infinite normal;
+  display: flex-end;
+  align-items: center;
+}
+@keyframes typewriter{
+  from{width: 0;}
+  to{width: 24em;}
+  display: flex-end;
+  align-items: center;
+}
+@keyframes blinkTextCursor{
+  from{border-right-color: rgba(255,255,255,.75);}
+  to{border-right-color: transparent;}
+  display: flex-end;
+  align-items: center;
+} */
+
+ /* */
+
 nav {
   display: flex;
   align-items: center;
