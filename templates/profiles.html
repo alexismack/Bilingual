@@ -4,15 +4,14 @@
     <meta charset="utf-8">
     <link rel="stylesheet" href="../stylesheets/profiles.css">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-      rel="stylesheet">>
+      rel="stylesheet">
 
   </head>
   <font color = "white">
   <body background = "https://images.unsplash.com/photo-1532433308301-ddfff1c56afc?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=a802848fff0d070bcf3f629e7a4b2149&auto=format&fit=crop&w=1650&q=80">
   <center> <h1 class = header>  </h1> </center>
   <center>
-    <nav >
-      <i class="material-icons"> accessibility_new </i>
+    <nav>
       <a href="{{log_url}}">{{log_message}}</a>
       <a href="/"> Search </a>
     </nav>
@@ -26,10 +25,13 @@
               <label for="avatar">Profile picture:</label>
               <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
               <form method = "post" enctype="multipart/form-data">
+              <div class="">
+                <input type="file"
+                       id="avatar" name="avatar"
+                       accept="image/png, image/jpeg"/>
+              </div>
 
-              <input type="file"
-                     id="avatar" name="avatar"
-                     accept="image/png, image/jpeg" />
+              <!-- <br> -->
               <button> Submit </button>
               </form>
           </div>
