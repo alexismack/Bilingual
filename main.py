@@ -189,7 +189,34 @@ class Results(webapp2.RequestHandler):
             # variable['my_query': my_name]
         self.response.write(template.render(variables))
 
+class OtherProfile(webapp2.RequestHandler):
+    def get(self):
+        template = jinja_environment.get_template('profiles.html')
+        email = self.request.get("email")
+        individual = users.get_current_user()
+        if individual:
+            #user is logged in
+            log_url = users.create_logout_url('/')
+            log_message = 'Log Out'
+            sign_up_url = users.create_login_url('/createaccount')
 
+        if not individual:
+            #user is not logged in
+            log_url = users.create_login_url('/')
+            log_message = 'Log In'
+            sign_up_url = users.create_login_url('/createaccount')
+        other_user= User.query().filter(User.email == email).get()
+        variables = {
+            'name': other_user.name,
+            'email': other_user.email,
+            'city': other_user.city,
+            'country': other_user.country,
+            'time_span': other_user.time_span,
+            'availability': other_user.availability,
+            'log_url': log_url,
+            'log_message': log_message,
+        }
+        self.response.write(template.render(variables))
 
 class CreateAccount(webapp2.RequestHandler):
     def get(self):
@@ -228,6 +255,7 @@ app = webapp2.WSGIApplication([
     # ('/search', Search),
     # ('/authorize', Authorize),
     ('/profiles', Profiles),
+    ('/otherprofile', OtherProfile),
     ('/createaccount', CreateAccount),
     ('/results', Results)
 ], debug=True)

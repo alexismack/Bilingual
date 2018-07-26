@@ -8,6 +8,8 @@
       rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Oxygen" rel="stylesheet">
     <link rel="shortcut icon" type="image/png" href="/images/favicon.png"/>
+    <!-- <script src="javascript/profiles.js"></script> -->
+
   </head>
   <body>
     <div class="topline">
@@ -33,22 +35,28 @@
         <h2> {{name0}} </h2>
         <img src = "data:image/jpg;base64,{{image0}}" width = 30px height= 30px>
         <h4> {{city0}} </h4>
-        <h4> {{email0}}</h4>
-        <button onclick="myScript"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
+        <h4 id="top_left"> {{email0}}</h4>
+        <form action="/otherprofile" method="get">
+          <input type="hidden" name="email" value="{{email0}}">
+          <button id="top_left_button"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
+        </form>
       </div>
       <div class = "column">
         <h2> {{name1}} </h2>
         <img src = "data:image/jpg;base64,{{image1}}" width = 20px height= 20px>
         <h4> {{city1}} </h4>
-        <h4> {{email1}}</h4>
-        <button onclick="myScript"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
+        <h4 id="top_middle"> {{email1}}</h4>
+        <form action="/otherprofile" method="get">
+          <input type="hidden" name="email" value="{{email1}}">
+          <button id="top_middle_button"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
+        </form>
       </div>
       <div class = "column">
         <h2> {{name2}} </h2>
         <img src = "data:image/jpg;base64,{{image2}}" width = 20px height= 20px>
         <h4> {{city2}} </h4>
         <h4> {{email2}}</h4>
-        <button onclick="myScript"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
+        <button onclick="onButtonClick"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
       </div>
     </div>
     <br/>
