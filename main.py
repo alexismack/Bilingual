@@ -44,6 +44,7 @@ class Home(webapp2.RequestHandler):
         my_query = User.query(User.country == search_term).order(User.city).fetch()
         print(my_query)
         counter = 0
+        variables = {'search_term': search_term}
         for i in my_query:
             variables["name" + str(counter)] = i.name
             counter = counter + 1
