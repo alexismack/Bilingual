@@ -18,6 +18,7 @@ body {
   width: 150%;
   z-index: -1;
   position: absolute;
+
 }
 
 .topline {
@@ -112,4 +113,8 @@ h2{
 button{
   background-color: Black;
   color: white;
+}
+
+img{
+  border-radius: 50%;
 }
