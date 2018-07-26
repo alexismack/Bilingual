@@ -85,7 +85,9 @@ class Profiles(webapp2.RequestHandler):
 
             log_url = users.create_logout_url('/')
             log_message = 'Log Out'
-
+            other_email = self.request.get("email")
+            print other_email + "*"
+            print individual.email + "**"
             variables = {'name': individual.name,
                         'email': individual.email,
                         'city': individual.city,
@@ -94,6 +96,7 @@ class Profiles(webapp2.RequestHandler):
                         'availability': individual.availability,
                         'log_url': log_url,
                         'log_message': log_message,
+                        'other_email': other_email,
                         }
             if individual.image:
                 variables['avatar'] = base64.b64encode(individual.image)
@@ -203,8 +206,8 @@ class Results(webapp2.RequestHandler):
 
 class OtherProfile(webapp2.RequestHandler):
     def get(self):
-        template = jinja_environment.get_template('profiles.html')
-        email = self.request.get("email")
+        template = jinja_environment.get_template('otherprofile.html')
+        other_email = self.request.get("email")
         individual = users.get_current_user()
         if individual:
             #user is logged in
@@ -217,10 +220,10 @@ class OtherProfile(webapp2.RequestHandler):
             log_url = users.create_login_url('/')
             log_message = 'Log In'
             sign_up_url = users.create_login_url('/createaccount')
-        other_user= User.query().filter(User.email == email).get()
+        other_user = User.query().filter(User.email == other_email).get()
         variables = {
             'name': other_user.name,
-            'email': other_user.email,
+            'other_email': other_user.email,
             'city': other_user.city,
             'country': other_user.country,
             'time_span': other_user.time_span,
