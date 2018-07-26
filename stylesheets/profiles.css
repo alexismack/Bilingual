@@ -12,6 +12,7 @@
     border-width: 5px;
 
 
+
 }
 .bottom {
     opacity: 0.80;
@@ -66,4 +67,13 @@ a, button {
   text-decoration: none;
   padding: 10px;
   /* border: 2px solid black; */
+}
+
+h1{
+
+  text-shadow: 1px 1px #000000
+
+}
+
+h2{
 }
