@@ -24,14 +24,10 @@
               <label for="avatar">Profile picture:</label>
               <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
               <form method = "post" enctype="multipart/form-data">
-              <div class="">
-                <input type="file"
-                       id="avatar" name="avatar"
-                       accept="image/png, image/jpeg"/>
-              </div>
-
-              <!-- <br> -->
               {% if email == user_email %}
+              <div class="">
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/>
+              </div>
               <button> Submit </button>
               {% endif %}
               </form>
