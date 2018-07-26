@@ -97,6 +97,12 @@ class Profiles(webapp2.RequestHandler):
                         }
             if individual.image:
                 variables['avatar'] = base64.b64encode(individual.image)
+            if len(individual.journies) != 0:
+                story = []
+                for i in individual.journies:
+                    story.append(base64.b64encode(i))
+                    variables['journies'] = story
+
             self.response.write(template.render(variables))
 
         else:
@@ -107,8 +113,13 @@ class Profiles(webapp2.RequestHandler):
             key = ndb.Key('User', current.email())
             individual = key.get()
             avatar = self.request.get('avatar')
-            individual.image = avatar
+            if avatar:
+                individual.image = avatar
+            journey = self.request.get('journey')
+            if journey:
+                individual.journies.append(journey)
             individual.put()
+
         self.redirect('/profiles')
 
 class Results(webapp2.RequestHandler):

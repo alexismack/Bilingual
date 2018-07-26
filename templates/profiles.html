@@ -20,7 +20,6 @@
 
       <fieldset>
           <legend>Profile</legend>
-
           <div>
               <label for="avatar">Profile picture:</label>
               <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
@@ -35,7 +34,6 @@
               <button> Submit </button>
               </form>
           </div>
-
       </fieldset>
     </font>
 
@@ -60,42 +58,23 @@
     <div class=bottom color = black>
       <fieldset>
           <legend>Your Story <i class="material-icons">language</i></legend>
-
           <div>
-              <label for="avatar">Share Your Journey: </label>
-              <input type="file"
-                     id="jounrey1" name="journey1"
-                     accept="image/png, image/jpeg" />
+              <label for="journey">Share Your Journey:</label>
+              {%for journey in journies%}
+              <img src = "data:image/jpg;base64,{{journey}}" width = 100px height= 80px>
+              {%endfor%}
+              <form method = "post" enctype="multipart/form-data">
+              <div class="journey">
+                <input type="file"
+                       id="journey" name="journey"
+                       accept="image/png, image/jpeg"/>
+              </div>
+              <button> <h4> Submit </h4> </button>
+              </form>
           </div>
-          <div>
-              <label for="avatar">Share Your Journey:</label>
-              <input type="file"
-                     id="jounrey2" name="journey2"
-                     accept="image/png, image/jpeg" />
-          </div>
-
-          <div>
-              <label for="avatar">Share Your Journey:</label>
-              <input type="file"
-                     id="jounrey3" name="journey3"
-                     accept="image/png, image/jpeg" />
-          </div>
-          <div>
-              <label for="avatar">Share Your Journey:</label>
-              <input type="file"
-                     id="jounrey4" name="journey4"
-                     accept="image/png, image/jpeg" />
-          </div>
-          <div>
-              <label for="avatar">Share Your Journey:</label>
-              <input type="file"
-                     id="jounrey4" name="journey4"
-                     accept="image/png, image/jpeg" />
-          </div>
-
       </fieldset>
     </div>
-
+  </div>
 
 
   </body>
