@@ -71,9 +71,16 @@ a, button {
 
 h1{
 
-  text-shadow: 1px 1px #000000
+  text-shadow: 1px 1px #000000;
+
 
 }
 
-h2{
+h4{
+  color: black;
+  font-size: .8rem;
+}
+
+img{
+  border-radius: 50%;
 }

@@ -17,3 +17,4 @@ class User(ndb.Model):
     name = ndb.StringProperty(required=True)
     email = ndb.StringProperty(required=True)
     image = ndb.BlobProperty() # images can only be stored as "BlobProperty"
+    # journey = ndb.BlobProperty()

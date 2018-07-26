@@ -97,6 +97,8 @@ class Profiles(webapp2.RequestHandler):
                         }
             if individual.image:
                 variables['avatar'] = base64.b64encode(individual.image)
+            # if individual.journey:
+            #     variables['journey'] = base64.b64encode(individual.journey)
             self.response.write(template.render(variables))
 
         else:
@@ -109,6 +111,10 @@ class Profiles(webapp2.RequestHandler):
             avatar = self.request.get('avatar')
             individual.image = avatar
             individual.put()
+            journey = self.request.get('journey')
+            individual.journey = journey
+            individual.put()
+
         self.redirect('/profiles')
 
 class Results(webapp2.RequestHandler):
