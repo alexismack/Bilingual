@@ -10,15 +10,19 @@
     margin-top: 50px;
     border-style: solid;
     border-width: 5px;
-
-
-
 }
+
+#avatar {
+  display: flex;
+  justify-content: center;
+}
+
 .bottom {
     opacity: 0.80;
     position: bottom;
     height: 400px;
     background-color: white;
+    margin-top: 5px;
     margin-left: 225px;
     margin-right: 225px;
     border-style: solid;

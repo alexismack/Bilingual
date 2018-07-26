@@ -228,7 +228,8 @@ class OtherProfile(webapp2.RequestHandler):
             'log_url': log_url,
             'log_message': log_message,
         }
-        variables["image"] = base64.b64encode(other_user.image)
+        if other_user.image:
+            variables["avatar"] = base64.b64encode(other_user.image)
         self.response.write(template.render(variables))
 
 class CreateAccount(webapp2.RequestHandler):

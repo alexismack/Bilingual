@@ -24,14 +24,12 @@
               <label for="avatar"></label>
               <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
               <form method = "post" enctype="multipart/form-data">
+              {% if email == user_email %}
               <div class="">
-                <input type="file"
-                       id="avatar" name="avatar"
-                       accept="image/png, image/jpeg"/>
+                <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/>
               </div>
-
-              <!-- <br> -->
               <button> Submit </button>
+              {% endif %}
               </form>
           </div>
       </fieldset>
@@ -63,15 +61,14 @@
               {%for journey in journies%}
               <img src = "data:image/jpg;base64,{{journey}}" width = 100px height= 80px>
               {%endfor%}
+              {% if email == user_email %}
               <form method = "post" enctype="multipart/form-data">
               <div class="journey">
-                <input type="file"
-                       id="journey" name="journey"
-                       accept="image/png, image/jpeg"/>
+                  <input type="file" id="journey" name="journey" accept="image/png, image/jpeg"/>
               </div>
               <button> <h4> Submit </h4> </button>
               </form>
-
+              {% endif %}
           </div>
       </fieldset>
     </div>
