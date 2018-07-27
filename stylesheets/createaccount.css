@@ -6,6 +6,7 @@ body {
   height: 100%;
   background: url("https://images.unsplash.com/photo-1422565167033-dec8fad92aba?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=035a36750e66c67ffee4e80b4bc6986b&auto=format&fit=crop&w=1650&q=80"
  ) no-repeat center center fixed;
+  background-size: 100% 100%;
 }
 
 p {
