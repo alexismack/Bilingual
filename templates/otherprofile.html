@@ -22,7 +22,11 @@
           <legend>Profile</legend>
           <div>
             <label for="avatar"></label>
+            {%if avatar%}
             <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
+            {%else%}
+            <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
+            {%endif%}
           </div>
       </fieldset>
     </font>
@@ -31,7 +35,7 @@
        <div class = criticalinfo>
           {{city}},
           {{country}} </br>
-          {{email}}
+          {{other_email}}
       </div>
       <div class = criticalinfo>
           Time Span: {{time_span}} </br>
