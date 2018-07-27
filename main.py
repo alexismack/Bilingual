@@ -231,8 +231,6 @@ class OtherProfile(webapp2.RequestHandler):
             'log_url': log_url,
             'log_message': log_message,
         }
-        cemail = users.get_current_user().email
-        print(" *****")
 
         if other_user.image:
             variables["avatar"] = base64.b64encode(other_user.image)
