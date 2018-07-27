@@ -22,7 +22,13 @@
           <legend>Profile</legend>
           <div>
               <label for="avatar"></label>
-              <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
+              {%if avatar%}
+
+              <img src = "data:image/jpg;base64,{{avatar}}" class = profileimg width = 90px height= 90px>
+              {%else%}
+              <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png" class = profileimg   width = 90px height =90px>
+              {%endif%}
+
               <form method = "post" enctype="multipart/form-data">
               <div class="">
                 <input type="file" id="avatar" name="avatar" accept="image/png, image/jpeg"/>
@@ -37,11 +43,11 @@
        <div class = criticalinfo>
           {{city}},
           {{country}} </br>
-          {{email}}
       </div>
       <div class = criticalinfo>
+          {{email}} </br>
           Time Span: {{time_span}} </br>
-          Interest: {{availability}}/100
+          Availability: {{availability}}/100
       </div>
          <!-- <div class = message> SEND MESSAGE  <i class="material-icons">message</i>
            {{denied}}
@@ -58,7 +64,7 @@
           <div>
               <label for="journey">Share Your Journey:</label>
               {%for journey in journies%}
-              <img src = "data:image/jpg;base64,{{journey}}" width = 100px height= 80px>
+              <img src = "data:image/jpg;base64,{{journey}}" width = 150px height= 150px>
               {%endfor%}
               <form method = "post" enctype="multipart/form-data">
               <div class="journey">
@@ -70,7 +76,5 @@
       </fieldset>
     </div>
   </div>
-
-
   </body>
 </html>

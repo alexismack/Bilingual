@@ -22,7 +22,11 @@
           <legend>Profile</legend>
           <div>
             <label for="avatar"></label>
-            <img src = "data:image/jpg;base64,{{avatar}}" width = 100px height= 80px>
+            {%if avatar%}
+            <img src = "data:image/jpg;base64,{{avatar}}" class = profileimg width = 90px height= 90px>
+            {%else%}
+            <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png" class = profileimg  width = 90px height =90px>
+            {%endif%}
           </div>
       </fieldset>
     </font>
@@ -31,11 +35,11 @@
        <div class = criticalinfo>
           {{city}},
           {{country}} </br>
-          {{email}}
+          {{other_email}}
       </div>
       <div class = criticalinfo>
           Time Span: {{time_span}} </br>
-          Interest: {{availability}}/100
+          Availability: {{availability}}/100
           <form class="" action="/otherprofile" method="post">
             <input type="hidden" name="other_email" value="{{other_email}}">
             <input type="text" name="message_body" placeholder="Send A Message">
@@ -57,7 +61,7 @@
           <div>
               <label for="journey"></label>
               {%for journey in journies%}
-              <img src = "data:image/jpg;base64,{{journey}}" width = 100px height= 80px>
+              <img src = "data:image/jpg;base64,{{journey}}" width = 150px height= 150px>
               {%endfor%}
           </div>
       </fieldset>

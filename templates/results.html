@@ -36,7 +36,11 @@
       {% if name0 %}
       <div class = "column">
         <h2> {{name0}} </h2>
-        <img src = "data:image/jpg;base64,{{image0}}" width = 25px height= 25px>
+        {%if image0%}
+        <img src = "data:image/jpg;base64,{{image0}}" width = 100px height= 80px>
+        {%else%}
+        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
+        {%endif%}
         <h4> {{city0}} </h4>
         <h4 id="top_left"> </h4>
         <form action="/otherprofile" method="get">
@@ -49,7 +53,11 @@
       {% if name1 %}
       <div class = "column">
         <h2> {{name1}} </h2>
-        <img src = "data:image/jpg;base64,{{image1}}" width = 25px height= 25px>
+        {%if image1%}
+        <img src = "data:image/jpg;base64,{{image1}}" width = 100px height= 80px>
+        {%else%}
+        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
+        {%endif%}
         <h4> {{city1}} </h4>
         <h4 id="top_middle"> </h4>
         <form action="/otherprofile" method="get">
@@ -62,7 +70,11 @@
       {% if name2 %}
       <div class = "column">
         <h2> {{name2}} </h2>
-        <img src = "data:image/jpg;base64,{{image2}}" width = 25px height= 25px>
+        {%if image2%}
+        <img src = "data:image/jpg;base64,{{image2}}" width = 100px height= 80px>
+        {%else%}
+        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
+        {%endif%}
         <h4> {{city2}} </h4>
         <h4 id="top_right"> </h4>
         <form action="/otherprofile" method="get">
@@ -78,7 +90,11 @@
       {% if name3 %}
       <div class = "column">
         <h2> {{name3}} </h2>
-        <img src = "data:image/jpg;base64,{{image3}}" width = 25px height= 25px>
+        {%if image3%}
+        <img src = "data:image/jpg;base64,{{image3}}" width = 100px height= 80px>
+        {%else%}
+        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
+        {%endif%}
         <h4> {{city3}} </h4>
         <h4 id="bottom_left"> {{email3}}</h4>
         <form action="/otherprofile" method="get">
@@ -91,7 +107,11 @@
       {% if name4 %}
       <div class = "column">
         <h2> {{name4}} </h2>
-        <img src = "data:image/jpg;base64,{{image4}}" width = 25px height= 25px>
+        {%if image4%}
+        <img src = "data:image/jpg;base64,{{image4}}" width = 100px height= 80px>
+        {%else%}
+        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
+        {%endif%}
         <h4> {{city4}} </h4>
         <h4 id="bottom_middle"> {{email4}}</h4>
         <form action="/otherprofile" method="get">
@@ -103,7 +123,11 @@
       {% if name5 %}
       <div class = "column">
         <h2> {{name5}} </h2>
-        <img src = "data:image/jpg;base64,{{image5}}" width = 25px height= 25px>
+        {%if image5%}
+        <img src = "data:image/jpg;base64,{{image5}}" width = 100px height= 80px>
+        {%else%}
+        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
+        {%endif%}
         <h4> {{city5}} </h4>
         <h4 id="bottom_right"> {{email5}}</h4>
         <form action="/otherprofile" method="get">
