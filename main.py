@@ -233,6 +233,13 @@ class OtherProfile(webapp2.RequestHandler):
         }
         if other_user.image:
             variables["avatar"] = base64.b64encode(other_user.image)
+
+        if len(other_user.journies) != 0:
+            story = []
+            for i in other_user.journies:
+                story.append(base64.b64encode(i))
+                variables["journies"] = story
+
         self.response.write(template.render(variables))
 
 class CreateAccount(webapp2.RequestHandler):
