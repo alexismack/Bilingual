@@ -36,11 +36,7 @@
       {% if name0 %}
       <div class = "column">
         <h2> {{name0}} </h2>
-        {%if image0%}
-        <img src = "data:image/jpg;base64,{{image0}}" width = 100px height= 80px>
-        {%else%}
-        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
-        {%endif%}
+        <img src = "data:image/jpg;base64,{{image0}}" width = 30px height= 25px>
         <h4> {{city0}} </h4>
         <h4 id="top_left"> </h4>
         <form action="/otherprofile" method="get">
@@ -49,15 +45,10 @@
         </form>
       </div>
       {%endif%}
-
       {% if name1 %}
       <div class = "column">
         <h2> {{name1}} </h2>
-        {%if image1%}
-        <img src = "data:image/jpg;base64,{{image1}}" width = 100px height= 80px>
-        {%else%}
-        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
-        {%endif%}
+        <img src = "data:image/jpg;base64,{{image1}}" width = 25px height= 25px>
         <h4> {{city1}} </h4>
         <h4 id="top_middle"> </h4>
         <form action="/otherprofile" method="get">
@@ -66,15 +57,10 @@
         </form>
       </div>
       {%endif%}
-
       {% if name2 %}
       <div class = "column">
         <h2> {{name2}} </h2>
-        {%if image2%}
-        <img src = "data:image/jpg;base64,{{image2}}" width = 100px height= 80px>
-        {%else%}
-        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
-        {%endif%}
+        <img src = "data:image/jpg;base64,{{image2}}" width = 30px height= 30px>
         <h4> {{city2}} </h4>
         <h4 id="top_right"> </h4>
         <form action="/otherprofile" method="get">
@@ -85,55 +71,31 @@
       {%endif%}
     </div>
     <br/>
-
     <div class = "row">
       {% if name3 %}
       <div class = "column">
         <h2> {{name3}} </h2>
-        {%if image3%}
-        <img src = "data:image/jpg;base64,{{image3}}" width = 100px height= 80px>
-        {%else%}
-        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
-        {%endif%}
+        <img src = "data:image/jpg;base64,{{image3}}" width = 25px height= 25px>
         <h4> {{city3}} </h4>
-        <h4 id="bottom_left"> {{email3}}</h4>
-        <form action="/otherprofile" method="get">
-          <input type="hidden" name="email" value="{{email3}}">
-          <button id="bottom_left_button"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
-        </form>
+        <button onclick="myScript"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
       </div>
       {%endif%}
-
       {% if name4 %}
       <div class = "column">
         <h2> {{name4}} </h2>
-        {%if image4%}
-        <img src = "data:image/jpg;base64,{{image4}}" width = 100px height= 80px>
-        {%else%}
-        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
-        {%endif%}
+        <img src = "data:image/jpg;base64,{{image4}}" width = 25px height= 25px>
         <h4> {{city4}} </h4>
-        <h4 id="bottom_middle"> {{email4}}</h4>
-        <form action="/otherprofile" method="get">
-          <input type="hidden" name="email" value="{{email4}}">
-          <button id="bottom_middle_button"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
-        </form>      </div>
+        <h4> </h4>
+        <button onclick="myScript"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
+      </div>
       {%endif%}
-
       {% if name5 %}
       <div class = "column">
         <h2> {{name5}} </h2>
-        {%if image5%}
-        <img src = "data:image/jpg;base64,{{image5}}" width = 100px height= 80px>
-        {%else%}
-        <img src = "https://iupac.org/cms/wp-content/uploads/2018/05/default-avatar.png"  width = 100px height =80px>
-        {%endif%}
+        <img src = "data:image/jpg;base64,{{image5}}" width = 25px height= 25px>
         <h4> {{city5}} </h4>
-        <h4 id="bottom_right"> {{email5}}</h4>
-        <form action="/otherprofile" method="get">
-          <input type="hidden" name="email" value="{{email5}}">
-          <button id="bottm_right_button"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
-        </form>
+        <h4> </h4>
+        <button onclick="myScript"> View Profile <i class="material-icons">perm_contact_calendar</i>  </button>
       </div>
       {%endif%}
     </div>

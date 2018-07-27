@@ -40,6 +40,11 @@
       <div class = criticalinfo>
           Time Span: {{time_span}} </br>
           Availability: {{availability}}/100
+          <form class="" action="/otherprofile" method="post">
+            <input type="hidden" name="other_email" value="{{other_email}}">
+            <input type="text" name="message_body" placeholder="Send A Message">
+            <button type="submit" name="button">Send</button>
+          </form>
       </div>
          <!-- <div class = message> SEND MESSAGE  <i class="material-icons">message</i>
            {{denied}}
@@ -52,9 +57,9 @@
 
     <div class=bottom color = black>
       <fieldset>
-          <legend>Your Story <i class="material-icons">language</i></legend>
+          <legend>Their Jounies <i class="material-icons">language</i></legend>
           <div>
-              <label for="journey">Share Your Journey:</label>
+              <label for="journey"></label>
               {%for journey in journies%}
               <img src = "data:image/jpg;base64,{{journey}}" width = 150px height= 150px>
               {%endfor%}
