@@ -6,12 +6,12 @@ import base64
 from google.appengine.ext import ndb
 from google.appengine.api import users
 from models import User
+from google.appengine.api import mail
 
 jinja_environment = jinja2.Environment(
     loader = jinja2.FileSystemLoader(
         os.path.dirname(__file__) + '/templates'))
 search_term = " "
-
 class Home(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('home.html')
@@ -241,7 +241,51 @@ class OtherProfile(webapp2.RequestHandler):
                 variables["journies"] = story
 
         self.response.write(template.render(variables))
+    def post(self):
+        template = jinja_environment.get_template('otherprofile.html')
+        print("posted")
+        # global other_email
+        # other_email = self.request.get("email")
+        individual = users.get_current_user()
+        if individual:
+            #user is logged in
+            log_url = users.create_logout_url('/')
+            log_message = 'Log Out'
+            sign_up_url = users.create_login_url('/createaccount')
 
+        if not individual:
+            #user is not logged in
+            log_url = users.create_login_url('/')
+            log_message = 'Log In'
+            sign_up_url = users.create_login_url('/createaccount')
+        other_email=self.request.get("other_email")
+        other_user = User.query().filter(User.email == other_email).get()
+        print(other_user)
+        variables = {
+            'name': other_user.name,
+            'other_email': other_user.email,
+            'city': other_user.city,
+            'country': other_user.country,
+            'time_span': other_user.time_span,
+            'availability': other_user.availability,
+            'log_url': log_url,
+            'log_message': log_message,
+        }
+        if other_user.image:
+            variables["avatar"] = base64.b64encode(other_user.image)
+
+        if len(other_user.journies) != 0:
+            story = []
+            for i in other_user.journies:
+                story.append(base64.b64encode(i))
+                variables["journies"] = story
+        sender= individual.email()
+        print("Here it is")
+        recipient=self.request.get("other_email")
+        subject="A New Friend on Divercity"
+        message_body=self.request.get("message_body")
+        mail.send_mail(sender, recipient, subject, message_body)
+        self.response.write(template.render(variables))
 class CreateAccount(webapp2.RequestHandler):
     def get(self):
         template = jinja_environment.get_template('createaccount.html')
