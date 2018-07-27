@@ -177,3 +177,17 @@ h1{
   color: white;
   text-shadow: 1px 1px;
 }
+
+footer{
+  text-align: center;
+  justify-content: center;
+  font-family: 'Oxygen', sans-serif;
+  color: white;
+  font-size: 150%;
+
+}
+
+.bottom{
+  height: 30px;
+  color: white;
+}
